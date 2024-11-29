@@ -1,5 +1,6 @@
 package com.ankitangra.www.kmp_sample
 
+import com.ankitangra.www.kmp_sample.github.presentation.GithubDetailSharedViewModel
 import com.ankitangra.www.kmp_sample.github.presentation.GithubListSharedViewModel
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.okhttp.OkHttp
@@ -38,5 +39,9 @@ actual val platformModule: Module = module {
 
     factory {
         GithubListSharedViewModel(get())
+    }
+
+    factory {
+        GithubDetailSharedViewModel(get())
     }
 }

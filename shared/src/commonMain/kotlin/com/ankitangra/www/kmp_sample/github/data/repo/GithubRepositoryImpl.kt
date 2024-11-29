@@ -1,6 +1,6 @@
 package com.ankitangra.www.kmp_sample.github.data.repo
 
-import com.ankitangra.www.kmp_sample.core.data.model.NetworkResult
+import com.ankitangra.www.kmp_sample.core.data.util.NetworkResult
 import com.ankitangra.www.kmp_sample.github.data.remote.GithubApi
 import com.ankitangra.www.kmp_sample.github.domain.models.GithubDetail
 import com.ankitangra.www.kmp_sample.github.domain.models.GithubList

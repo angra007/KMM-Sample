@@ -45,6 +45,10 @@ actual val platformModule = module {
         GithubListSharedViewModel(get())
     }
 
+    factory {
+        GithubDetailSharedViewModel(get())
+    }
+
 }
 
 object SharedViewModelProvider: KoinComponent {

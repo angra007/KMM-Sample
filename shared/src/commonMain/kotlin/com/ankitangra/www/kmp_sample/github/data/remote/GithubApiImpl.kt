@@ -1,6 +1,6 @@
 package com.ankitangra.www.kmp_sample.github.data.remote
 
-import com.ankitangra.www.kmp_sample.core.data.model.NetworkResult
+import com.ankitangra.www.kmp_sample.core.data.util.NetworkResult
 import com.ankitangra.www.kmp_sample.core.data.remote.KmmAppKtorClient
 import io.ktor.utils.io.core.toByteArray
 
@@ -13,7 +13,7 @@ class GithubApiImpl(
     }
 
     override suspend fun getGithubDetail(): NetworkResult {
-        TODO("Not yet implemented")
+        return NetworkResult.Success("".toByteArray())
     }
 
 }

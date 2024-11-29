@@ -1,4 +1,4 @@
-package com.ankitangra.www.kmp_sample.core.data.model
+package com.ankitangra.www.kmp_sample.core.data.util
 
 sealed interface NetworkResult {
     data class Success(val data: ByteArray) : NetworkResult {
