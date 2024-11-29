@@ -1,6 +1,6 @@
 package com.ankitangra.www.kmp_sample
 
-import com.ankitangra.www.kmp_sample.list.presentation.GithubListSharedViewModel
+import com.ankitangra.www.kmp_sample.github.presentation.GithubListSharedViewModel
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.okhttp.OkHttp
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -37,6 +37,6 @@ actual val platformModule: Module = module {
     }
 
     factory {
-        GithubListSharedViewModel()
+        GithubListSharedViewModel(get())
     }
 }

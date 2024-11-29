@@ -1,7 +1,7 @@
 package com.ankitangra.www.kmp_sample
 
-import com.ankitangra.www.kmp_sample.detail.presentation.GithubDetailSharedViewModel
-import com.ankitangra.www.kmp_sample.list.presentation.GithubListSharedViewModel
+import com.ankitangra.www.kmp_sample.github.presentation.GithubDetailSharedViewModel
+import com.ankitangra.www.kmp_sample.github.presentation.GithubListSharedViewModel
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.darwin.Darwin
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -42,7 +42,7 @@ actual val platformModule = module {
     }
 
     factory {
-        GithubListSharedViewModel()
+        GithubListSharedViewModel(get())
     }
 
 }
