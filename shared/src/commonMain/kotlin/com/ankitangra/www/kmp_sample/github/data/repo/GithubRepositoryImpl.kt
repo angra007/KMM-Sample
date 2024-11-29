@@ -5,6 +5,7 @@ import com.ankitangra.www.kmp_sample.github.data.remote.GithubApi
 import com.ankitangra.www.kmp_sample.github.domain.models.GithubDetail
 import com.ankitangra.www.kmp_sample.github.domain.models.GithubList
 import com.ankitangra.www.kmp_sample.github.domain.repo.GithubRepository
+import io.github.aakira.napier.Napier
 import kotlinx.serialization.json.Json
 
 class GithubRepositoryImpl(
@@ -16,7 +17,8 @@ class GithubRepositoryImpl(
         return when (val result = api.getGithubList()) {
             is NetworkResult.Error -> throw result.error
             is NetworkResult.Success -> {
-                TODO("Not yet implemented")
+                Napier.d(message = "Github List API Call Success",tag = "Ankit")
+                return GithubList("")
             }
         }
     }
@@ -25,7 +27,7 @@ class GithubRepositoryImpl(
         return when (val result = api.getGithubDetail()) {
             is NetworkResult.Error -> throw result.error
             is NetworkResult.Success -> {
-                TODO("Not yet implemented")
+                return GithubDetail("")
             }
         }
     }
