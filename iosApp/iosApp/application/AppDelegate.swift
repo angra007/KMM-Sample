@@ -10,6 +10,7 @@ class AppDelegate: UIResponder,  UIApplicationDelegate, UNUserNotificationCenter
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
 
         startKoin()
+        LoggerInitilizerKt.initializeLogger()
         return true
     }
 

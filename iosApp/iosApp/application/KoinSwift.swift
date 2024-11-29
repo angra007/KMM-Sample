@@ -3,8 +3,6 @@ import shared
 
 func startKoin() {
 
-    let doOnStartup = { NSLog("Hello from iOS/Swift!") }
-
     let koinApplication = KoinIOSKt.doInitKoinIos()
     _koin = koinApplication.koin
 }

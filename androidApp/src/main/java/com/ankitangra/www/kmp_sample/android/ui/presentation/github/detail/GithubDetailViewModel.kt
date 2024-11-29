@@ -1,4 +1,6 @@
 package com.ankitangra.www.kmp_sample.android.ui.presentation.github.detail
 
-class GithubDetailViewModel {
+import androidx.lifecycle.ViewModel
+
+class GithubDetailViewModel: ViewModel() {
 }

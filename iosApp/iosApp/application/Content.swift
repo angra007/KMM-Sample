@@ -1,5 +1,5 @@
 //
-//  GithubDetailScreen.swift
+//  Content.swift
 //  iosApp
 //
 //  Created by Ankit Angra on 2024-11-28.
@@ -9,11 +9,11 @@
 import SwiftUI
 import shared
 
-struct GithubDetailScreen: View {
+struct ContentView: View {
 
-    @StateObject var githubDetailViewModel: GithubDetailViewModel
+    private let viewFactory = Factories.current.viewFactory
     
     var body: some View {
-        Text("Hello World")
+        viewFactory.build(screen: .githubList)
     }
 }
