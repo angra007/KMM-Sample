@@ -35,16 +35,24 @@
                                     <action selector="didTapOnObserveButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="P1K-ky-vGq"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="1zB-V1-zzc">
+                                <rect key="frame" x="178" y="350.66666666666669" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="1zB-V1-zzc" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Uf5-Qy-Gwj"/>
                             <constraint firstItem="rD9-ai-vWH" firstAttribute="centerX" secondItem="Sx0-ZD-NFO" secondAttribute="centerX" id="V9k-TG-m62"/>
+                            <constraint firstItem="Sx0-ZD-NFO" firstAttribute="top" secondItem="1zB-V1-zzc" secondAttribute="bottom" constant="27.670000000000002" id="bss-xs-WU1"/>
                             <constraint firstItem="rD9-ai-vWH" firstAttribute="top" secondItem="Sx0-ZD-NFO" secondAttribute="bottom" constant="20.329999999999998" id="f6h-dm-G8I"/>
                             <constraint firstItem="Sx0-ZD-NFO" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="kxu-wB-OHp"/>
                             <constraint firstItem="Sx0-ZD-NFO" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="vjh-D8-RE0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loadingIndicator" destination="1zB-V1-zzc" id="Y1N-Z2-9GQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

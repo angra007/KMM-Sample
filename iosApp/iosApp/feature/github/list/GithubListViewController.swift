@@ -16,6 +16,8 @@ class GithubListViewController: UIViewController, StoryboardInstantiable {
     
     private var disposeBag: DisposeBag = DisposeBag()
     
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
     @IBAction func didTapOnObserveButton(_ sender: UIButton) {
         viewModel.helloWorld()
     }
@@ -23,22 +25,24 @@ class GithubListViewController: UIViewController, StoryboardInstantiable {
     override func viewDidLoad() {
         super.viewDidLoad()
              
-        viewModel.testRx?
+        viewModel.subject
             .subscribe(
                 onNext: { event in
-                    print(event)
-                },
-                onError: { _ in
-                    
-                },
-                onCompleted: {
-                    
+                    self.setupUI(state: event)
                 }
             )
             .disposed(by: disposeBag)
         
         viewModel.observe()
 
+    }
+    
+    private func setupUI(state: GithubListViewState) {
+        if (state.isLoading) {
+            loadingIndicator.startAnimating()
+        } else {
+            loadingIndicator.stopAnimating()
+        }
     }
     
 }

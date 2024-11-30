@@ -16,11 +16,13 @@ open class GithubListSharedViewModel(
     val state = _state.asStateFlow().toCommonStateFlow()
 
     fun getGithubList() {
-        _state.value = _state.value.copy(isLoading = true)
+
         coroutineScope.launch {
+            _state.value = _state.value.copy(isLoading = true)
             githubListUseCase("")
             _state.value = _state.value.copy(list = GithubList("Ankit"),isLoading = false)
         }
+
     }
 
 }
