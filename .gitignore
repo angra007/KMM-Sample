@@ -9,3 +9,7 @@ captures
 local.properties
 xcuserdata
 .kotlin/
+
+iosApp/Pods/
+
+iosApp/Podfile.lock
