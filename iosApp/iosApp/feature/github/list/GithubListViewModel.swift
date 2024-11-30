@@ -17,7 +17,7 @@ class GithubListViewModel {
         
     private var coroutineDisposableHandle : DisposableHandle?
         
-    var subject: BehaviorRelay<GithubListViewState> = .init(value: GithubListViewState.init(isLoading: false))
+    var subject: BehaviorRelay<GithubListViewState> = .init(value: GithubListViewState.init(isLoading: false, errorMessage : nil))
     
     init(sharedViewModel: GithubListSharedViewModel) {
         self.sharedViewModel = sharedViewModel
@@ -26,7 +26,12 @@ class GithubListViewModel {
     func observe() {
         self.coroutineDisposableHandle = self.sharedViewModel.state.subscribe(onCollect: { newState in
             guard let state = newState else { return }            
-            self.subject.accept(GithubListViewState(isLoading: state.isLoading))
+            self.subject.accept(
+                GithubListViewState(
+                    isLoading: state.isLoading,
+                    errorMessage: state.errorMessage
+                )
+            )
         })
     }
     
@@ -41,4 +46,5 @@ class GithubListViewModel {
 
 struct GithubListViewState {
     let isLoading: Bool
+    let errorMessage: String?
 }

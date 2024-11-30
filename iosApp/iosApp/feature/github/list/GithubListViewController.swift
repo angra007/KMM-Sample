@@ -18,6 +18,9 @@ class GithubListViewController: UIViewController, StoryboardInstantiable {
     
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
+    
+    @IBOutlet weak var errorMessageLabel: UILabel!
+    
     @IBAction func didTapOnObserveButton(_ sender: UIButton) {
         viewModel.helloWorld()
     }
@@ -42,6 +45,12 @@ class GithubListViewController: UIViewController, StoryboardInstantiable {
             loadingIndicator.startAnimating()
         } else {
             loadingIndicator.stopAnimating()
+        }
+        
+        if let errorMessage = state.errorMessage {
+            self.errorMessageLabel.text = errorMessage
+        } else {
+            self.errorMessageLabel.text = nil
         }
     }
     

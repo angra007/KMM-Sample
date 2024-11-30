@@ -51,6 +51,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="errorMessageLabel" destination="Sx0-ZD-NFO" id="GgR-Y0-QN0"/>
                         <outlet property="loadingIndicator" destination="1zB-V1-zzc" id="Y1N-Z2-9GQ"/>
                     </connections>
                 </viewController>
