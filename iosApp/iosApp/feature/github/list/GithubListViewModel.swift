@@ -9,7 +9,6 @@
 import Foundation
 import shared
 
-
 class GithubListViewModel: ObservableObject {
     
     private let sharedViewModel: GithubListSharedViewModel
@@ -28,6 +27,10 @@ class GithubListViewModel: ObservableObject {
             print("New State")
             print(newState)
         })
+    }
+    
+    deinit {
+        disposableHandle?.dispose()
     }
     
     func helloWorld() {

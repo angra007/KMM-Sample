@@ -11,17 +11,17 @@ import shared
 class Factories {
     
     let viewModel: ViewModelFactory
-    let viewFactory: ViewFactory
+    let viewControllerFactory: ViewControllerFactory
     
-    init( viewModelFactory: ViewModelFactory, viewFactory : ViewFactory) {
+    init( viewModelFactory: ViewModelFactory, viewControllerFactory : ViewControllerFactory) {
         self.viewModel = viewModelFactory
-        self.viewFactory = viewFactory
+        self.viewControllerFactory = viewControllerFactory
     }
     
     static var current: Factories = {
         let viewModelFactory = ViewModelFactoryImpl(sharedViewModelProvider: SharedViewModelProvider.shared)
-        let viewFactory = ViewFactoryImpl(viewModelFactory: viewModelFactory)
-        return Factories(viewModelFactory: viewModelFactory, viewFactory: viewFactory)
+        let viewControllerFactory = ViewControllerFactoryImpl(viewModelFactory: viewModelFactory)
+        return Factories(viewModelFactory: viewModelFactory, viewControllerFactory: viewControllerFactory)
     }()
     
 }
