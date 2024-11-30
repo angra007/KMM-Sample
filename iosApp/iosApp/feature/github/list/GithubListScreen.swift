@@ -27,5 +27,8 @@ struct GithubListScreen: View {
             }
             .padding(.horizontal)
         }
+        .task {
+            githubListViewModel.observe()
+        }
     }
 }

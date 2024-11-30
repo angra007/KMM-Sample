@@ -14,12 +14,24 @@ class GithubListViewModel: ObservableObject {
     
     private let sharedViewModel: GithubListSharedViewModel
     
+    @Published
+    var state: GithubListSharedViewState = GithubListSharedViewState.companion.initial()
+    
+    private var disposableHandle : DisposableHandle?
+    
     init(sharedViewModel: GithubListSharedViewModel) {
         self.sharedViewModel = sharedViewModel
     }
     
+    func observe() {
+        self.disposableHandle = sharedViewModel.state.subscribe(onCollect: { newState in
+            print("New State")
+            print(newState)
+        })
+    }
+    
     func helloWorld() {
-        sharedViewModel.helloWorld()
+        sharedViewModel.getGithubList()
     }
     
 }
