@@ -4,4 +4,5 @@ import com.ankitangra.www.kmp_sample.github.domain.models.GithubSearchResult
 
 interface GithubRepository {
     suspend fun getGithubUser(name: String): List<GithubSearchResult>
+    suspend fun getGithubOrgs(name: String): List<GithubSearchResult>
 }

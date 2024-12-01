@@ -16,13 +16,19 @@ class GithubRepositoryImpl(
 
     override suspend fun getGithubUser(user: String): List<GithubSearchResult> {
         return when (val result = api.getGithubUser(user)) {
-            is NetworkResult.Error -> listOf(
-                GithubSearchDTO(
-                    name = "",
-                    publicRepos = 0,
-                    avatarUrl = ""
-                ).toSearchResult()
-            ) //throw result.error
+            is NetworkResult.Error -> throw result.error
+
+            is NetworkResult.Success -> {
+                val apiResponse = json.toObject<GithubSearchDTO>(result.data.decodeToString())
+                val searchResult = apiResponse.toSearchResult()
+                return listOf(searchResult)
+            }
+        }
+    }
+
+    override suspend fun getGithubOrgs(org: String): List<GithubSearchResult> {
+        return when (val result = api.getGithubOrg(org)) {
+            is NetworkResult.Error -> throw result.error
 
             is NetworkResult.Success -> {
                 val apiResponse = json.toObject<GithubSearchDTO>(result.data.decodeToString())

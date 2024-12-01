@@ -4,13 +4,15 @@ import com.ankitangra.www.kmp_sample.core.communication.toCommonStateFlow
 import com.ankitangra.www.kmp_sample.core.util.Either
 import com.ankitangra.www.kmp_sample.core.util.ViewModel
 import com.ankitangra.www.kmp_sample.github.domain.models.GithubSearchResult
+import com.ankitangra.www.kmp_sample.github.domain.usecase.GetGithubOrgUseCase
 import com.ankitangra.www.kmp_sample.github.domain.usecase.GetGithubUserUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 open class GithubListSharedViewModel(
-    private val githubUserUseCase: GetGithubUserUseCase
+    private val githubUserUseCase: GetGithubUserUseCase,
+    private val githubOrgUseCase: GetGithubOrgUseCase
 ): ViewModel() {
 
     private val _state = MutableStateFlow(GithubListSharedViewState())
@@ -31,6 +33,24 @@ open class GithubListSharedViewModel(
             _state.value = newState
         }
     }
+
+    fun getGithubOrgs(org: String) {
+        coroutineScope.launch {
+            _state.value = _state.value.copy(isLoading = true, errorMessage = null)
+
+            val newState = when (val result = githubOrgUseCase(org)) {
+                is Either.Error ->
+                    GithubListSharedViewState(isLoading = false, errorMessage = result.message)
+
+                is Either.Success ->
+                    GithubListSharedViewState(isLoading = false, searchList = result.data)
+            }
+
+            _state.value = newState
+        }
+    }
+
+
 }
 
 data class GithubListSharedViewState(
