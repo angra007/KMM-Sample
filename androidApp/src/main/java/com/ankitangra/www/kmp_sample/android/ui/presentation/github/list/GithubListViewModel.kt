@@ -43,7 +43,7 @@ class GithubListViewModel(
     }
 
     fun helloWorld() {
-        sharedViewModel.getGithubList()
+        sharedViewModel.getGithubUser(name = "angra007")
     }
 
 }

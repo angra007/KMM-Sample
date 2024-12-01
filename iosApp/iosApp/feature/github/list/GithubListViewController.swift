@@ -52,6 +52,11 @@ class GithubListViewController: UIViewController, StoryboardInstantiable {
         } else {
             self.errorMessageLabel.text = nil
         }
+        
+        state.results.forEach { result in
+            print("Found Result:")
+            print(result.name)
+        }
     }
     
 }

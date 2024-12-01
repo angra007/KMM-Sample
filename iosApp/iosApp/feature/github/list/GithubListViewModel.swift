@@ -17,7 +17,7 @@ class GithubListViewModel {
         
     private var coroutineDisposableHandle : DisposableHandle?
         
-    var subject: BehaviorRelay<GithubListViewState> = .init(value: GithubListViewState.init(isLoading: false, errorMessage : nil))
+    var subject: BehaviorRelay<GithubListViewState> = .init(value: GithubListViewState.init(isLoading: false, errorMessage : nil, results: []))
     
     init(sharedViewModel: GithubListSharedViewModel) {
         self.sharedViewModel = sharedViewModel
@@ -25,11 +25,21 @@ class GithubListViewModel {
     
     func observe() {
         self.coroutineDisposableHandle = self.sharedViewModel.state.subscribe(onCollect: { newState in
-            guard let state = newState else { return }            
+            guard let state = newState else { return }
+            
+            let results = state.searchList.map { searchResult in
+                GithubSearchResult.init(
+                    profileUrl: searchResult.profileImage,
+                    name: searchResult.name,
+                    numberOfRepos: Int(searchResult.numberOfRepo)
+                )
+            }
+            
             self.subject.accept(
                 GithubListViewState(
                     isLoading: state.isLoading,
-                    errorMessage: state.errorMessage
+                    errorMessage: state.errorMessage,
+                    results: results
                 )
             )
         })
@@ -40,11 +50,18 @@ class GithubListViewModel {
     }
     
     func helloWorld() {
-        sharedViewModel.getGithubList()
+        sharedViewModel.getGithubUser(name: "angra007")
     }
 }
 
 struct GithubListViewState {
     let isLoading: Bool
     let errorMessage: String?
+    let results: [GithubSearchResult]
+}
+
+struct GithubSearchResult {
+    let profileUrl: String
+    let name: String
+    let numberOfRepos: Int
 }

@@ -11,13 +11,8 @@ class GithubApiImpl(
     private val client: KmmAppKtorClient
 ): GithubApi {
 
-    override suspend fun getGithubList(): NetworkResult {
-        delay(5000)
-        return client.get("").toResult()
+    override suspend fun getGithubUser(name: String): NetworkResult {
+        return client.get("https://api.github.com/users/$name").toResult()
     }
-
-
-    override suspend fun getGithubDetail(): NetworkResult =
-        client.get("").toResult()
 
 }

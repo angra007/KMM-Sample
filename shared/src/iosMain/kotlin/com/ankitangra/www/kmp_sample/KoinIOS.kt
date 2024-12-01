@@ -46,7 +46,7 @@ actual val platformModule = module {
     }
 
     factory {
-        GithubDetailSharedViewModel(get())
+        GithubDetailSharedViewModel()
     }
 
 }

@@ -1,6 +1,5 @@
 package com.ankitangra.www.kmp_sample.core.data.remote
 
-import com.ankitangra.www.kmp_sample.core.data.model.ApiWrapper
 import com.ankitangra.www.kmp_sample.core.data.util.NetworkResult
 import com.ankitangra.www.kmp_sample.core.data.util.toObject
 import io.github.aakira.napier.Napier
@@ -86,7 +85,4 @@ suspend fun Result<HttpResponse>.toResult(): NetworkResult {
 
 }
 
-inline fun <reified T> NetworkResult.Success.toApiResponse(json: Json): ApiWrapper<T> {
-    return  json.toObject<ApiWrapper<T>>(this.data.decodeToString())
-}
 
