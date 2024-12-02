@@ -10,5 +10,6 @@ target 'iosApp' do
     pod 'RxRelay', '6.8.0'
     pod 'RxTest', '6.8.0'
     pod 'RxCocoa', '6.8.0'
-
+    pod 'SDWebImage', '~> 5.0'
+    
 end

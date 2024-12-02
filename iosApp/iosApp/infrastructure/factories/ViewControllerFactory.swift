@@ -8,6 +8,7 @@
 
 protocol ViewControllerFactory {
     func makeGithubListViewController() -> GithubListViewController
+    func makeGithubDetailViewController(name: String) -> GithubDetailViewController
 }
 
 class ViewControllerFactoryImpl: ViewControllerFactory {
@@ -23,5 +24,13 @@ class ViewControllerFactoryImpl: ViewControllerFactory {
         let githubViewModel = viewModelFactory.makeGithubListViewModel()
         githubListVC.viewModel = githubViewModel
         return githubListVC
+    }
+    
+    func makeGithubDetailViewController(name: String) -> GithubDetailViewController {
+        let githubDetailVC = GithubDetailViewController.instantiateViewController()
+        let githubDetailViewModel = viewModelFactory.makeGithubDetailViewModel()
+        githubDetailVC.viewmodel = githubDetailViewModel
+        githubDetailVC.name = name
+        return githubDetailVC
     }
 }

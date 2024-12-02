@@ -56,6 +56,61 @@
             </objects>
             <point key="canvasLocation" x="-31.297709923664122" y="3.5211267605633805"/>
         </scene>
+        <!--Github Detail View Controller-->
+        <scene sceneID="0FD-Xd-HCn">
+            <objects>
+                <viewController storyboardIdentifier="GithubDetailViewController" id="C6b-YY-AsH" customClass="GithubDetailViewController" customModule="iosApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LXp-fg-xnQ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Var-3L-eqw">
+                                <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RrS-Rp-O65">
+                                <rect key="frame" x="16" y="103" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="Yjy-3y-k3e"/>
+                                    <constraint firstAttribute="height" constant="90" id="bIR-zN-USC"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAQ-XV-00b">
+                                <rect key="frame" x="114" y="103" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ji7-ne-LUW">
+                                <rect key="frame" x="114" y="132" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uCP-w0-HbN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Var-3L-eqw" firstAttribute="centerY" secondItem="LXp-fg-xnQ" secondAttribute="centerY" id="8fi-my-ieg"/>
+                            <constraint firstItem="ji7-ne-LUW" firstAttribute="top" secondItem="lAQ-XV-00b" secondAttribute="bottom" constant="8" symbolic="YES" id="ACT-uV-uer"/>
+                            <constraint firstItem="ji7-ne-LUW" firstAttribute="leading" secondItem="lAQ-XV-00b" secondAttribute="leading" id="D6B-CW-ZaL"/>
+                            <constraint firstItem="lAQ-XV-00b" firstAttribute="top" secondItem="RrS-Rp-O65" secondAttribute="top" id="GpQ-v7-SAQ"/>
+                            <constraint firstItem="Var-3L-eqw" firstAttribute="centerX" secondItem="LXp-fg-xnQ" secondAttribute="centerX" id="Lk9-Pj-Hwh"/>
+                            <constraint firstItem="lAQ-XV-00b" firstAttribute="leading" secondItem="RrS-Rp-O65" secondAttribute="trailing" constant="8" symbolic="YES" id="rFF-HE-TkN"/>
+                            <constraint firstItem="RrS-Rp-O65" firstAttribute="top" secondItem="uCP-w0-HbN" secondAttribute="top" constant="44" id="whh-2Y-ft7"/>
+                            <constraint firstItem="RrS-Rp-O65" firstAttribute="leading" secondItem="uCP-w0-HbN" secondAttribute="leading" constant="16" id="yIa-An-1wI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loadingIndicator" destination="Var-3L-eqw" id="F0C-f8-G3r"/>
+                        <outlet property="nameLabel" destination="lAQ-XV-00b" id="Qz6-DY-BkD"/>
+                        <outlet property="numberOfRepositoryLabel" destination="ji7-ne-LUW" id="Ih4-OR-GjG"/>
+                        <outlet property="profileImageView" destination="RrS-Rp-O65" id="ZwR-7W-Bnq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TX6-Dt-T7p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="774.80916030534343" y="3.5211267605633805"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

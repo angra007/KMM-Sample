@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,8 +12,6 @@
 		4BB6161E16220F0C940ECD21 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54930A9DE6CEA3FBD28D40DE /* Pods_iosApp.framework */; };
 		DE484AEE2CF82812006D58D6 /* KoinSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE484AED2CF82812006D58D6 /* KoinSwift.swift */; };
 		DE484AEF2CF82812006D58D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE484AEC2CF82812006D58D6 /* AppDelegate.swift */; };
-		DE484AF92CF95C3A006D58D6 /* GithubDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE484AF12CF95C3A006D58D6 /* GithubDetailScreen.swift */; };
-		DE484AFB2CF95C3A006D58D6 /* GithubDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE484AF22CF95C3A006D58D6 /* GithubDetailViewModel.swift */; };
 		DE484AFC2CF95C3A006D58D6 /* GithubListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE484AF52CF95C3A006D58D6 /* GithubListViewModel.swift */; };
 		DE484B012CF95E1A006D58D6 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE484B002CF95E16006D58D6 /* ViewModelFactory.swift */; };
 		DE484B082CF96B4F006D58D6 /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE484B072CF96B4B006D58D6 /* Factories.swift */; };
@@ -22,6 +20,8 @@
 		DE484B132CFACE31006D58D6 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE484B122CFACE30006D58D6 /* StoryboardInstantiable.swift */; };
 		DE484B152CFACEC7006D58D6 /* GithubStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE484B142CFACEC7006D58D6 /* GithubStoryboard.storyboard */; };
 		DE484B172CFAD3BC006D58D6 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE484B162CFAD3BA006D58D6 /* ViewControllerFactory.swift */; };
+		DE484B192CFD78EE006D58D6 /* GithubDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE484B182CFD78EE006D58D6 /* GithubDetailViewController.swift */; };
+		DE484B1B2CFD7903006D58D6 /* GithubDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE484B1A2CFD78FA006D58D6 /* GithubDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,8 +47,6 @@
 		8682AD5055A57533A6D18CAA /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
 		DE484AEC2CF82812006D58D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE484AED2CF82812006D58D6 /* KoinSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoinSwift.swift; sourceTree = "<group>"; };
-		DE484AF12CF95C3A006D58D6 /* GithubDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubDetailScreen.swift; sourceTree = "<group>"; };
-		DE484AF22CF95C3A006D58D6 /* GithubDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubDetailViewModel.swift; sourceTree = "<group>"; };
 		DE484AF52CF95C3A006D58D6 /* GithubListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubListViewModel.swift; sourceTree = "<group>"; };
 		DE484B002CF95E16006D58D6 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		DE484B072CF96B4B006D58D6 /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
@@ -57,6 +55,8 @@
 		DE484B122CFACE30006D58D6 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
 		DE484B142CFACEC7006D58D6 /* GithubStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GithubStoryboard.storyboard; sourceTree = "<group>"; };
 		DE484B162CFAD3BA006D58D6 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		DE484B182CFD78EE006D58D6 /* GithubDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubDetailViewController.swift; sourceTree = "<group>"; };
+		DE484B1A2CFD78FA006D58D6 /* GithubDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,8 +127,8 @@
 		DE484AF32CF95C3A006D58D6 /* detail */ = {
 			isa = PBXGroup;
 			children = (
-				DE484AF12CF95C3A006D58D6 /* GithubDetailScreen.swift */,
-				DE484AF22CF95C3A006D58D6 /* GithubDetailViewModel.swift */,
+				DE484B182CFD78EE006D58D6 /* GithubDetailViewController.swift */,
+				DE484B1A2CFD78FA006D58D6 /* GithubDetailViewModel.swift */,
 			);
 			path = detail;
 			sourceTree = "<group>";
@@ -205,7 +205,6 @@
 				8682AD5055A57533A6D18CAA /* Pods-iosApp.debug.xcconfig */,
 				75B8E8D8C9278A6B478EE80B /* Pods-iosApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -345,14 +344,14 @@
 			files = (
 				DE484AEE2CF82812006D58D6 /* KoinSwift.swift in Sources */,
 				DE484B172CFAD3BC006D58D6 /* ViewControllerFactory.swift in Sources */,
+				DE484B192CFD78EE006D58D6 /* GithubDetailViewController.swift in Sources */,
 				DE484B012CF95E1A006D58D6 /* ViewModelFactory.swift in Sources */,
 				DE484B102CFACDC2006D58D6 /* GithubListViewController.swift in Sources */,
 				DE484AEF2CF82812006D58D6 /* AppDelegate.swift in Sources */,
-				DE484AF92CF95C3A006D58D6 /* GithubDetailScreen.swift in Sources */,
 				DE484B132CFACE31006D58D6 /* StoryboardInstantiable.swift in Sources */,
 				DE484B0C2CFACC0F006D58D6 /* SceneDelegate.swift in Sources */,
+				DE484B1B2CFD7903006D58D6 /* GithubDetailViewModel.swift in Sources */,
 				DE484B082CF96B4F006D58D6 /* Factories.swift in Sources */,
-				DE484AFB2CF95C3A006D58D6 /* GithubDetailViewModel.swift in Sources */,
 				DE484AFC2CF95C3A006D58D6 /* GithubListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

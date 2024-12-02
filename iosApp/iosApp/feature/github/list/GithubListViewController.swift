@@ -51,6 +51,7 @@ class GithubListViewController: UIViewController, StoryboardInstantiable, UISear
     
     private func setupTableView() {
         searchResultTableView.dataSource = self
+        searchResultTableView.delegate = self
         searchResultTableView.register(UITableViewCell.self, forCellReuseIdentifier: "SearchResultCell")
     }
     
@@ -87,5 +88,13 @@ extension GithubListViewController: UITableViewDataSource {
         let result = searchResults[indexPath.row]
         cell.textLabel?.text = result.name
         return cell
+    }
+}
+
+extension GithubListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let result = searchResults[indexPath.row]
+        let vc = Factories.current.viewControllerFactory.makeGithubDetailViewController(name: result.name)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

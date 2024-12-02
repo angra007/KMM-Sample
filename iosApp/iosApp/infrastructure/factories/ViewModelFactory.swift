@@ -27,6 +27,6 @@ class ViewModelFactoryImpl: ViewModelFactory {
     }
     
     func makeGithubDetailViewModel() -> GithubDetailViewModel {
-        return GithubDetailViewModel()
+        return GithubDetailViewModel(sharedViewModel: sharedViewModelProvider.getGithubListSharedViewModel())
     }
 }
