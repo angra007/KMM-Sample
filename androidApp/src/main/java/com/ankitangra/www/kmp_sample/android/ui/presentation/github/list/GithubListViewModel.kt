@@ -43,7 +43,7 @@ class GithubListViewModel(
     }
 
     fun helloWorld() {
-        sharedViewModel.getGithubOrgs(org = "microsoft")
+        sharedViewModel.searchUser(query = "microsoft")
     }
 
 }

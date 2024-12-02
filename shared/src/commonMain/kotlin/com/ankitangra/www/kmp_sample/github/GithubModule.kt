@@ -4,10 +4,10 @@ import com.ankitangra.www.kmp_sample.github.data.remote.GithubApi
 import com.ankitangra.www.kmp_sample.github.data.remote.GithubApiImpl
 import com.ankitangra.www.kmp_sample.github.data.repo.GithubRepositoryImpl
 import com.ankitangra.www.kmp_sample.github.domain.repo.GithubRepository
-import com.ankitangra.www.kmp_sample.github.domain.usecase.GetGithubOrgUseCase
-import com.ankitangra.www.kmp_sample.github.domain.usecase.GetGithubOrgUseCaseImpl
 import com.ankitangra.www.kmp_sample.github.domain.usecase.GetGithubUserUseCase
 import com.ankitangra.www.kmp_sample.github.domain.usecase.GetGithubUserUseCaseImpl
+import com.ankitangra.www.kmp_sample.github.domain.usecase.GithubSearchUseCase
+import com.ankitangra.www.kmp_sample.github.domain.usecase.GithubSearchUseCaseImpl
 import org.koin.dsl.module
 
 val githubModule = module {
@@ -24,8 +24,8 @@ val githubModule = module {
         GetGithubUserUseCaseImpl(get())
     }
 
-    single<GetGithubOrgUseCase> {
-        GetGithubOrgUseCaseImpl(get())
+    single<GithubSearchUseCase> {
+        GithubSearchUseCaseImpl(get())
     }
 
 }

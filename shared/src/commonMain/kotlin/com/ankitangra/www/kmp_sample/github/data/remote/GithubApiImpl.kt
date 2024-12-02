@@ -20,4 +20,8 @@ class GithubApiImpl(
         return client.get(BaseConfig.BASE_URL + "orgs/$name").toResult()
     }
 
+    override suspend fun searchGithubOrg(query: String): NetworkResult {
+        return client.get(BaseConfig.BASE_URL + "search/users?q=$query").toResult()
+    }
+
 }

@@ -86,3 +86,6 @@ suspend fun Result<HttpResponse>.toResult(): NetworkResult {
 }
 
 
+inline fun <reified T> NetworkResult.Success.toApiResponse(json: Json): ApiWrapper<T> {
+    return  json.toObject<ApiWrapper<T>>(this.data.decodeToString())
+}

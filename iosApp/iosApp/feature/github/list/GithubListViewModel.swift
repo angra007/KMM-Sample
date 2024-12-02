@@ -30,8 +30,7 @@ class GithubListViewModel {
             let results = state.searchList.map { searchResult in
                 GithubSearchResult.init(
                     profileUrl: searchResult.profileImage,
-                    name: searchResult.name,
-                    numberOfRepos: Int(searchResult.numberOfRepo)
+                    name: searchResult.name
                 )
             }
             
@@ -50,7 +49,7 @@ class GithubListViewModel {
     }
     
     func helloWorld() {
-        sharedViewModel.getGithubUser(name: "angra007")
+        sharedViewModel.searchUser(query: "microsoft")
     }
 }
 
@@ -63,5 +62,4 @@ struct GithubListViewState {
 struct GithubSearchResult {
     let profileUrl: String
     let name: String
-    let numberOfRepos: Int
 }
