@@ -34,7 +34,9 @@ class GithubListViewModel(
         viewModelScope.launch {
             sharedViewModel.state
                 .map { state ->
-                    GithubListViewState(state.isLoading)
+                    GithubListViewState(state.isLoading, state.searchList.map {
+                        GithubSearchResult(name = it.name)
+                    })
                 }
                 .collect { newState ->
                     _state.value = newState
@@ -42,10 +44,9 @@ class GithubListViewModel(
         }
     }
 
-    fun helloWorld() {
-        sharedViewModel.searchUser(query = "microsoft")
+    fun search(query: String) {
+        sharedViewModel.searchUser(query = query)
     }
-
 }
 
 sealed class GithubListEvents(
@@ -53,8 +54,12 @@ sealed class GithubListEvents(
 )
 
 data class GithubListViewState(
-    val isLoading: Boolean = false
+    val isLoading: Boolean = false,
+    val result: List<GithubSearchResult> = listOf()
 )
+
+data class GithubSearchResult ( val name: String)
+
 
 
 

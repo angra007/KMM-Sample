@@ -17,47 +17,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sx0-ZD-NFO">
-                                <rect key="frame" x="175.66666666666666" y="415.66666666666669" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rD9-ai-vWH">
-                                <rect key="frame" x="159" y="456.66666666666669" width="75" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="MNw-T3-35a"/>
-                                    <constraint firstAttribute="width" constant="75" id="TIw-ID-SpZ"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="didTapOnObserveButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="P1K-ky-vGq"/>
-                                </connections>
-                            </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="1zB-V1-zzc">
-                                <rect key="frame" x="178" y="350.66666666666669" width="37" height="37"/>
+                                <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
                             </activityIndicatorView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="XxK-A1-iGE">
+                                <rect key="frame" x="0.0" y="59" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="C2h-kC-wMl"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5Q5-jw-DdH">
+                                <rect key="frame" x="0.0" y="115" width="393" height="703"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="5Q5-jw-DdH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="B7h-w2-I2c"/>
+                            <constraint firstItem="XxK-A1-iGE" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="GXq-Zs-Zju"/>
+                            <constraint firstItem="5Q5-jw-DdH" firstAttribute="top" secondItem="XxK-A1-iGE" secondAttribute="bottom" id="GeU-yY-BDj"/>
+                            <constraint firstItem="XxK-A1-iGE" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="QOa-So-efh"/>
                             <constraint firstItem="1zB-V1-zzc" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Uf5-Qy-Gwj"/>
-                            <constraint firstItem="rD9-ai-vWH" firstAttribute="centerX" secondItem="Sx0-ZD-NFO" secondAttribute="centerX" id="V9k-TG-m62"/>
-                            <constraint firstItem="Sx0-ZD-NFO" firstAttribute="top" secondItem="1zB-V1-zzc" secondAttribute="bottom" constant="27.670000000000002" id="bss-xs-WU1"/>
-                            <constraint firstItem="rD9-ai-vWH" firstAttribute="top" secondItem="Sx0-ZD-NFO" secondAttribute="bottom" constant="20.329999999999998" id="f6h-dm-G8I"/>
-                            <constraint firstItem="Sx0-ZD-NFO" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="kxu-wB-OHp"/>
-                            <constraint firstItem="Sx0-ZD-NFO" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="vjh-D8-RE0"/>
+                            <constraint firstItem="XxK-A1-iGE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="YNJ-6J-rQi"/>
+                            <constraint firstItem="1zB-V1-zzc" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="hFc-9p-ykV"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="5Q5-jw-DdH" secondAttribute="bottom" id="lM4-5D-ZfG"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5Q5-jw-DdH" secondAttribute="trailing" id="v0Z-e0-hPR"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="errorMessageLabel" destination="Sx0-ZD-NFO" id="GgR-Y0-QN0"/>
                         <outlet property="loadingIndicator" destination="1zB-V1-zzc" id="Y1N-Z2-9GQ"/>
+                        <outlet property="searchBarTextField" destination="XxK-A1-iGE" id="ymS-8y-7Rv"/>
+                        <outlet property="searchResultTableView" destination="5Q5-jw-DdH" id="xoZ-Ct-slQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-30" y="4"/>
+            <point key="canvasLocation" x="-31.297709923664122" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>

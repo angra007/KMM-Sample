@@ -48,8 +48,8 @@ class GithubListViewModel {
         coroutineDisposableHandle?.dispose()
     }
     
-    func helloWorld() {
-        sharedViewModel.searchUser(query: "microsoft")
+    func search(query: String) {
+        sharedViewModel.searchUser(query: query)
     }
 }
 
