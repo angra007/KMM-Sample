@@ -64,6 +64,7 @@ While unit tests are not included, the code is structured with:
 🚧 Room for Improvement
 
 	• Unit Testing: Although not included, the project is designed to support unit tests with its DI setup and interface-based architecture.
+ 	• Local Database: Even though I have not implemented a local database to cache the results, we can easily give offline support by introducing the database in the data layer inside common main
 	• UI Enhancements: Future versions could include animations or more detailed GitHub profile information.
 
 🎯 How to Run the Project
