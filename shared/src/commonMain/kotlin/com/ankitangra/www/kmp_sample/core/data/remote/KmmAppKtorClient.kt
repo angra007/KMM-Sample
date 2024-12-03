@@ -4,14 +4,13 @@ import io.ktor.client.HttpClient
 import io.ktor.client.plugins.HttpTimeout
 
 class KmmAppKtorClient (
-    val client: HttpClient,
+    private val client: HttpClient,
 ) {
     fun instance(): HttpClient {
         return client.config {
-            // Configure timeout settings
             install(HttpTimeout) {
-                requestTimeoutMillis = 30000 // 30 seconds
-                connectTimeoutMillis = 30000 // 30 seconds
+                requestTimeoutMillis = 30000
+                connectTimeoutMillis = 30000
             }
         }
     }

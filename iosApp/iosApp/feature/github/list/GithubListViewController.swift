@@ -39,12 +39,6 @@ class GithubListViewController: UIViewController, StoryboardInstantiable, UISear
             loadingIndicator.stopAnimating()
         }
 
-        state.results.forEach { result in
-            print("Found Result:")
-            print(result.name)
-        }
-        
-        // Update search results and reload the table view
         searchResults = state.results
         searchResultTableView.reloadData()
     }
@@ -56,17 +50,16 @@ class GithubListViewController: UIViewController, StoryboardInstantiable, UISear
     }
     
     private func setupBindings() {
-        // Bind search bar text changes to the ViewModel
+        
         searchBarTextField.rx.text.orEmpty
-            .distinctUntilChanged() // Only emit distinct changes
-            .debounce(.milliseconds(300), scheduler: MainScheduler.instance) // Delay for 300ms to avoid rapid calls
-            .filter { $0.count >= 3 } // Only trigger for input with 3 or more characters
+            .distinctUntilChanged()
+            .debounce(.milliseconds(300), scheduler: MainScheduler.instance)
+            .filter { $0.count >= 3 }
             .subscribe(onNext: { [weak self] query in
                 self?.viewModel.search(query: query)
             })
             .disposed(by: disposeBag)
             
-            // Subscribe to the ViewModel's subject to update UI
         viewModel.subject
             .subscribe(
                 onNext: { [weak self] state in

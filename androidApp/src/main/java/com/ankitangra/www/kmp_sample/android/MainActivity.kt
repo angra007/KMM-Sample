@@ -18,7 +18,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.ankitangra.www.kmp_sample.Greeting
 import com.ankitangra.www.kmp_sample.android.ui.presentation.github.detail.GithubDetailScreen
 import com.ankitangra.www.kmp_sample.android.ui.presentation.github.list.GithubListScreen
 import com.ankitangra.www.kmp_sample.android.ui.theme.AppTheme

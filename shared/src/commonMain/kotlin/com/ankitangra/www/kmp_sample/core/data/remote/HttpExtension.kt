@@ -76,9 +76,9 @@ suspend fun Result<HttpResponse>.toResult(): NetworkResult {
         }
 
         else -> {
-            //Napier.e("HttpFailure -> ${this.exceptionOrNull()?.message}")
-            //Napier.e("HttpFailure -> ${this.exceptionOrNull()?.cause?.message}")
-            //this.exceptionOrNull()?.printStackTrace()
+            Napier.e("HttpFailure -> ${this.exceptionOrNull()?.message}")
+            Napier.e("HttpFailure -> ${this.exceptionOrNull()?.cause?.message}")
+            this.exceptionOrNull()?.printStackTrace()
             NetworkResult.Error(Exception("Something went wrong! Please try again later."))
         }
     }

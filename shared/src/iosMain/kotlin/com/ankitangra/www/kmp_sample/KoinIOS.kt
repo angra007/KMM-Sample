@@ -48,11 +48,9 @@ actual val platformModule = module {
     factory {
         GithubDetailSharedViewModel(get())
     }
-
 }
 
 object SharedViewModelProvider: KoinComponent {
-
     fun getGithubListSharedViewModel() = getKoin().get<GithubListSharedViewModel>()
     fun getGithubDetailSharedViewModel() = getKoin().get<GithubDetailSharedViewModel>()
 }
