@@ -12,12 +12,12 @@ import RxRelay
 
 class GithubDetailViewModel {
     
-    private let sharedViewModel: GithubListSharedViewModel
+    private let sharedViewModel: GithubDetailSharedViewModel
     private var coroutineDisposableHandle : DisposableHandle?
     
     var subject: BehaviorRelay<GithubDetailViewState> = .init(value: GithubDetailViewState.init(isLoading: false, errorMessage : nil, user: nil))
 
-    init(sharedViewModel: GithubListSharedViewModel) {
+    init(sharedViewModel: GithubDetailSharedViewModel) {
         self.sharedViewModel = sharedViewModel
     }
     

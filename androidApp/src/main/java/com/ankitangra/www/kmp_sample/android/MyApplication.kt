@@ -21,7 +21,7 @@ class MyApplication: Application() {
             }
 
             viewModel {
-                GithubDetailViewModel()
+                GithubDetailViewModel(get())
             }
 
         })
