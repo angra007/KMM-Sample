@@ -29,7 +29,6 @@ class GithubListViewModel(
     private val _state = MutableStateFlow(GithubListViewState())
     val state = _state.asStateFlow().toCommonStateFlow()
 
-
     init {
         viewModelScope.launch {
             sharedViewModel.state

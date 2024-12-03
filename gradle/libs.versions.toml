@@ -10,7 +10,8 @@ ktor = "2.3.7"
 coroutines = "1.7.3"
 serializationVersion = "1.6.0"
 androidx-lifecycle = "2.6.2"
-
+compose-nav = "2.7.6"
+coilCompose = "2.5.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -19,6 +20,10 @@ compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
 compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "compose-material3" }
+
+compose-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "compose-nav" }
+
+compose-coil = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
 
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
