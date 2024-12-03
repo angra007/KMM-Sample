@@ -1,6 +1,4 @@
-# KMM-Sample
-
-GitHub User Finder - Kotlin Multiplatform Project
+# GitHub User Finder - Kotlin Multiplatform Project
 
 🚀 Project Overview
 
