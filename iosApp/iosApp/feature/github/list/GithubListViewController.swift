@@ -18,8 +18,14 @@ class GithubListViewController: UIViewController, StoryboardInstantiable, UISear
     private var disposeBag: DisposeBag = DisposeBag()
     
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var searchResultTableView: UITableView! {
+        didSet {
+            searchResultTableView.dataSource = self
+            searchResultTableView.delegate = self
+            searchResultTableView.register(UITableViewCell.self, forCellReuseIdentifier: "SearchResultCell")
+        }
+    }
     
-    @IBOutlet weak var searchResultTableView: UITableView!
     @IBOutlet weak var searchBarTextField: UISearchBar!
 
     private var searchResults: [GithubSearchResult] = []
@@ -28,7 +34,6 @@ class GithubListViewController: UIViewController, StoryboardInstantiable, UISear
         super.viewDidLoad()
         searchBarTextField.delegate = self
         setupBindings()
-        setupTableView()
         viewModel.observe()
     }
     
@@ -41,12 +46,6 @@ class GithubListViewController: UIViewController, StoryboardInstantiable, UISear
 
         searchResults = state.results
         searchResultTableView.reloadData()
-    }
-    
-    private func setupTableView() {
-        searchResultTableView.dataSource = self
-        searchResultTableView.delegate = self
-        searchResultTableView.register(UITableViewCell.self, forCellReuseIdentifier: "SearchResultCell")
     }
     
     private func setupBindings() {
